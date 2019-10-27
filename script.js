@@ -5,8 +5,8 @@ const randomNum = (num) => {
     return Math.floor(Math.random() * num);
 }
 
-const randomDimensions = () => {
-    let dimension = randomNum(1000) + "px";
+const randomDimension = (num) => {
+    let dimension = randomNum(num) + "px";
     return dimension;
 }
 
@@ -68,9 +68,16 @@ const randomColor = (differentColor) => {
     return color;
 }
 
-button.onwheel = function() {
-    ricardo.style.width = randomDimensions();
-    ricardo.style.height = randomDimensions();
+const randomColors = (color) => {
     button.style.backgroundColor = randomColor();
     button.style.color = randomColor(button.style.backgroundColor);
+}
+
+const randomDimensions = (num) => {
+    ricardo.style.width = randomDimension(num);
+    ricardo.style.height = randomDimension(num);
+}
+button.onwheel = function() {
+    randomDimensions(500);
+    randomColors();
 }
