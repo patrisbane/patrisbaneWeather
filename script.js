@@ -77,7 +77,7 @@ const randomDimensions = (num) => {
     ricardo.style.width = randomDimension(num);
     ricardo.style.height = randomDimension(num);
 }
-button.onwheel = function() {
+document.body.onwheel = function() {
     randomDimensions(500);
     randomColors();
 }
